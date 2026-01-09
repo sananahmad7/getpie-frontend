@@ -94,7 +94,7 @@ const FeaturedItems = () => {
                             key={item.id}
                             onClick={() => setActiveTabId(item.id)}
                             className={`
-                                px-6 py-4 rounded-t-xl font-bold text-sm md:text-base transition-all duration-300 border-t border-x border-b-0 flex items-center gap-2 backdrop-blur-md
+                                px-6 py-4 rounded-t-xl font-bold cursor-pointer text-sm md:text-base transition-all duration-300 border-t border-x border-b-0 flex items-center gap-2 backdrop-blur-md
                                 ${activeTabId === item.id
                                     ? "bg-white/20 text-white border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.1)] scale-105 mb-[-1px] pb-5 z-20" // Active Glass
                                     : "bg-white/5 text-blue-200 border-white/5 hover:bg-white/10 hover:text-white mb-0" // Inactive Glass

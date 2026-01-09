@@ -41,12 +41,7 @@ const AgentProgram = () => {
                 {/* 1. HEADER (Sharp & Left Aligned) */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="max-w-3xl">
-                        {/* Sharp Badge */}
-                        <div className="inline-block bg-gray-100 px-3 py-1 mb-6">
-                            <span className="text-[#4686BC] font-bold tracking-[0.2em] uppercase text-xs">
-                                // AGENT_PROGRAM
-                            </span>
-                        </div>
+
 
                         <h2 className="text-5xl md:text-6xl font-bold text-slate-900 leading-[0.95] tracking-tight">
                             Earn Monthly <br />
@@ -103,7 +98,7 @@ const AgentProgram = () => {
                 {/* 3. FOOTER (Sharp Buttons) */}
                 <div className="mt-16 flex flex-col md:flex-row gap-12 items-center border-t border-gray-100 pt-16">
                     <div className="md:w-1/3">
-                        <button className="w-full md:w-auto bg-[#4686BC] text-white px-10 py-5 font-bold text-sm uppercase tracking-widest hover:bg-[#386d99] transition-colors flex justify-between items-center group">
+                        <button className="w-full cursor-pointer md:w-auto bg-[#4686BC] text-white px-10 py-5 font-bold text-sm uppercase tracking-widest hover:bg-[#386d99] transition-colors flex justify-between items-center group">
                             <span>Join The Program</span>
                             <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                         </button>
