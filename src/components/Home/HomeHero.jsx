@@ -54,7 +54,7 @@ const HomeHero = () => {
                   Add 'drop-shadow-xl' to give the hardware that "floating" look.
                */}
                             <img
-                                src="/src/assets/Hero.webp"
+                                src="/HERO.webp"
                                 alt="Pie Pay POS Devices"
                                 className="w-full h-auto object-contain drop-shadow-2xl hover:scale-[1.02] transition-transform duration-700 ease-out"
                             />

@@ -40,7 +40,7 @@ const NavBar = () => {
                     <a href="#" className="flex items-center gap-3 cursor-pointer select-none group">
                         {/* REPLACE src WITH YOUR ACTUAL LOGO PATH */}
                         <img
-                            src="/src/assets/LogoDark.png"
+                            src="/LogoDark.png"
                             alt="GetPiePay Logo"
                             // CHANGE: Removed 'w-10' and 'object-cover'. 
                             // Added 'w-auto' (calculates width automatically) and 'object-contain' (prevents cropping).
