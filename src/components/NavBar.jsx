@@ -2,87 +2,131 @@ import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const NavBar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
+    // REMOVED: isScrolled state
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-    // Handle scroll effect
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 20) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    const [activeSection, setActiveSection] = useState('');
 
     const navLinks = [
-        { name: 'Solutions', href: '#solutions' },
-        { name: 'Pricing', href: '#pricing' },
-        { name: 'Developers', href: '#developers' },
-        { name: 'About', href: '#about' },
+        { name: 'PiePay Earning Analysis', href: '#earning-analysis', id: 'earning-analysis' },
+        { name: 'Pie ProShop', href: '#proshop', id: 'proshop' },
+        { name: 'Get a Free Landing Page', href: '/SliceOfTheMarket', id: 'landing-page', isSpecial: true },
     ];
+
+    useEffect(() => {
+        // REMOVED: handleScroll function for navbar styling
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        }, observerOptions);
+
+        navLinks.forEach((link) => {
+            const section = document.getElementById(link.id);
+            if (section) observer.observe(section);
+        });
+
+        // REMOVED: window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            // REMOVED: window.removeEventListener('scroll', handleScroll);
+            navLinks.forEach((link) => {
+                const section = document.getElementById(link.id);
+                if (section) observer.unobserve(section);
+            });
+        };
+    }, []);
+
+    const scrollToSection = (e, href) => {
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const element = document.querySelector(href);
+            if (element) {
+                const offsetTop = element.offsetTop - 100;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+                setIsMobileMenuOpen(false);
+            }
+        }
+    };
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 font-outfit
-                ${isScrolled
-                    ? 'bg-white/80 backdrop-blur-lg shadow-sm border-b border-gray-100/50 py-3'
-                    : 'bg-white/0 py-5'}
-            `}
+            // UPDATED: Fixed style (No longer conditional). 
+            // Added 'bg-white', 'shadow-sm', 'border-b' permanently.
+            className="w-full z-50 font-outfit bg-white shadow-sm border-b border-gray-100 py-3"
         >
             <div className="container mx-auto px-6 md:px-12">
                 <div className="flex items-center justify-between">
 
-                    {/* 1. LOGO & BRAND (Left) */}
-                    <a href="#" className="flex items-center gap-3 cursor-pointer select-none group">
-                        {/* REPLACE src WITH YOUR ACTUAL LOGO PATH */}
+                    {/* LOGO */}
+                    <a href="/" className="flex items-center gap-3 cursor-pointer select-none group">
                         <img
                             src="/LogoDark.png"
-                            alt="GetPiePay Logo"
-                            // CHANGE: Removed 'w-10' and 'object-cover'. 
-                            // Added 'w-auto' (calculates width automatically) and 'object-contain' (prevents cropping).
+                            alt="Pie.io Logo"
                             className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
                         />
                     </a>
 
-                    {/* 2. DESKTOP NAVIGATION (Right) */}
-                    <div className="hidden md:flex items-center gap-8">
-                        {/* Links with animated underline */}
-                        <div className="flex items-center gap-1">
-                            {navLinks.map((link) => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    className="relative px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors group/link"
-                                >
-                                    {link.name}
-                                    {/* Animated Underline */}
-                                </a>
-                            ))}
+                    {/* DESKTOP NAVIGATION */}
+                    <div className="hidden xl:flex items-center gap-8">
+
+                        <div className="flex items-center gap-2">
+                            {navLinks.map((link) => {
+                                const isActive = activeSection === link.id;
+
+                                return (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        onClick={(e) => scrollToSection(e, link.href)}
+                                        className={`
+                                            px-4 py-2 text-sm font-medium transition-all duration-200
+                                            ${isActive
+                                                ? 'bg-[#4686BC]/10 text-[#4686BC] font-bold'
+                                                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                                            }
+                                            ${link.isSpecial ? 'text-[#4686BC]' : ''}
+                                        `}
+                                    >
+                                        {link.name}
+                                    </a>
+                                );
+                            })}
                         </div>
 
-                        {/* Separator */}
-                        <div className="h-5 w-px bg-gray-200/80"></div>
+                        <div className="h-6 w-px bg-gray-300"></div>
 
-                        {/* Action Buttons */}
                         <div className="flex items-center gap-3">
-                            <a href="#login" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-[#4686BC] transition-colors">
-                                Log In
-                            </a>
-                            <button className="bg-[#4686BC] hover:bg-[#3972a5] text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-md shadow-blue-900/10 hover:shadow-blue-900/20 active:scale-95">
-                                Get Started
+                            <button className="bg-[#4686BC] hover:bg-[#3972a5] text-white px-5 py-2.5 font-bold text-sm transition-all shadow-md hover:shadow-lg">
+                                Referrals
                             </button>
+                            <button className="bg-[#4686BC] hover:bg-[#3972a5] text-white px-5 py-2.5 font-bold text-sm transition-all shadow-md hover:shadow-lg">
+                                Apply For Processing
+                            </button>
+                            <a
+                                href="#login"
+                                className="px-5 py-2.5 text-sm font-bold text-[#4686BC] border-2 border-[#4686BC] hover:bg-[#4686BC] hover:text-white transition-all"
+                            >
+                                Login
+                            </a>
                         </div>
                     </div>
 
-                    {/* 3. MOBILE MENU TOGGLE */}
+                    {/* MOBILE TOGGLE */}
                     <button
-                        className="md:hidden p-2 text-gray-700 hover:text-[#4686BC] transition-colors text-2xl"
+                        className="xl:hidden p-2 text-gray-700 hover:text-[#4686BC] transition-colors text-2xl"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        aria-label="Toggle Menu"
                     >
                         {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
                     </button>
@@ -90,9 +134,9 @@ const NavBar = () => {
                 </div>
             </div>
 
-            {/* 4. MOBILE MENU DROPDOWN */}
+            {/* MOBILE MENU */}
             <div
-                className={`absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-100/50 shadow-xl md:hidden flex flex-col items-center py-8 gap-6 transition-all duration-300 ease-in-out transform origin-top
+                className={`absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-xl xl:hidden flex flex-col items-center py-8 gap-6 transition-all duration-300 ease-in-out transform origin-top
                     ${isMobileMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}
                 `}
             >
@@ -100,17 +144,28 @@ const NavBar = () => {
                     <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-800 font-medium text-lg hover:text-[#4686BC] transition-colors"
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={(e) => scrollToSection(e, link.href)}
+                        className={`font-medium text-lg transition-colors 
+                            ${activeSection === link.id ? 'text-[#4686BC] font-bold bg-blue-50 w-full text-center py-2' : 'text-gray-800 hover:text-[#4686BC]'}
+                        `}
                     >
                         {link.name}
                     </a>
                 ))}
+
                 <hr className="w-1/4 border-gray-200 my-2" />
-                <a href="#login" className="text-gray-900 font-semibold text-lg hover:text-[#4686BC]">Log In</a>
-                <button className="bg-[#4686BC] hover:bg-[#3972a5] text-white px-8 py-3 rounded-full font-bold shadow-md w-3/4 max-w-xs transition-all">
-                    Get Started
-                </button>
+
+                <div className="flex flex-col gap-3 w-3/4 max-w-xs">
+                    <button className="bg-[#4686BC] hover:bg-[#3972a5] text-white px-6 py-3 font-bold shadow-md w-full transition-all">
+                        Referrals
+                    </button>
+                    <button className="bg-[#4686BC] hover:bg-[#3972a5] text-white px-6 py-3 font-bold shadow-md w-full transition-all">
+                        Apply For Processing
+                    </button>
+                    <a href="#login" className="text-center w-full px-6 py-3 font-bold text-[#4686BC] border-2 border-[#4686BC] hover:bg-[#4686BC] hover:text-white transition-all">
+                        Login
+                    </a>
+                </div>
             </div>
 
         </nav>
