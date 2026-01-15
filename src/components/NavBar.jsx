@@ -8,7 +8,7 @@ const NavBar = () => {
 
     const navLinks = [
         { name: 'PiePay Earning Analysis', href: '#earning-analysis', id: 'earning-analysis' },
-        { name: 'Pie ProShop', href: '#proshop', id: 'proshop' },
+        { name: 'Pie ProShop', href: '/PieProShop', id: 'proshop' },
         { name: 'Get a Free Landing Page', href: '/SliceOfTheMarket', id: 'landing-page', isSpecial: true },
     ];
 

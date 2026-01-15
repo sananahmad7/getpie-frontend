@@ -41,8 +41,6 @@ const AgentProgram = () => {
                 {/* 1. HEADER (Sharp & Left Aligned) */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="max-w-3xl">
-
-
                         <h2 className="text-5xl md:text-6xl font-bold text-slate-900 leading-[0.95] tracking-tight">
                             Earn Monthly <br />
                             <span className="text-[#4686BC]">Residual Income.</span>
@@ -56,39 +54,38 @@ const AgentProgram = () => {
                     </div>
                 </div>
 
-                {/* 2. THE SHARP GRID (Theme BG Applied) */}
-                {/* Outer borders changed to white/20 for contrast against the blue items */}
+                {/* 2. THE SHARP GRID (Dark Navy Theme BG Applied) */}
+                {/* Outer borders changed to white/20 for contrast against the dark navy items */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/20 shadow-xl">
                     {stats.map((stat) => (
                         <div
                             key={stat.id}
-                            // Updated BG color, borders, and hover state
-                            className="group relative border-r border-b border-white/20 bg-[#4686BC] p-10 hover:bg-[#3b75a8] transition-all duration-300"
+                            // Updated BG color to #051B31 (Dark Navy)
+                            className="group relative border-r border-b border-white/20 bg-[#051B31] p-10 hover:bg-[#0A2640] transition-all duration-300"
                         >
-                            {/* Hover Interaction: Sharp Corner Accent (Changed to White for contrast) */}
+                            {/* Hover Interaction: Sharp Corner Accent (White for contrast) */}
                             <div className="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-l-[40px] border-t-white border-l-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            <div className="absolute top-2 right-2 text-[#4686BC] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-[8px]">
+                            <div className="absolute top-2 right-2 text-[#051B31] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-[8px]">
                                 <FaSquareFull />
                             </div>
 
-                            {/* ID (Text color updated) */}
-                            <span className="block font-mono text-xs text-blue-200 mb-12 group-hover:text-white transition-colors">
+                            {/* ID */}
+                            <span className="block font-mono text-xs text-white/40 mb-12 group-hover:text-white transition-colors">
                                 {stat.id}
                             </span>
 
-                            {/* Value (Text color updated based on highlight) */}
-                            {/* Highlighted item is white, others are green for contrast on blue */}
+                            {/* Value */}
                             <h3 className={`text-4xl lg:text-5xl font-light tracking-tight mb-2 ${stat.highlight ? 'text-white' : 'text-[#48A64D]'}`}>
                                 {stat.value}
                             </h3>
 
-                            {/* Label (Text color updated) */}
+                            {/* Label */}
                             <p className="text-sm font-bold text-white uppercase tracking-wide mb-4">
                                 {stat.label}
                             </p>
 
-                            {/* Description (Text color updated) */}
-                            <p className="text-sm text-blue-100 leading-relaxed opacity-100">
+                            {/* Description */}
+                            <p className="text-sm text-blue-100/80 leading-relaxed opacity-100">
                                 {stat.desc}
                             </p>
                         </div>

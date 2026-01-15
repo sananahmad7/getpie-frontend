@@ -64,17 +64,12 @@ const TrainingSupport = () => {
                     </div>
                 </div>
 
-                {/* 2. THE CONNECTED GRID - Now with Blue Theme BG */}
-                {/* Changes made:
-                    1. Added bg-[#4686BC] to the cards.
-                    2. Changed text colors to white/blue-100.
-                    3. Changed border colors to white/20 for subtle separation.
-                */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-l border-t border-white/20 bg-[#4686BC]">
+                {/* 2. THE CONNECTED GRID - Now with Dark Navy Theme BG (#051B31) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-l border-t border-white/20 bg-[#051B31]">
                     {features.map((item) => (
-                        <div key={item.id} className="group relative border-r border-b border-white/20 p-10 bg-[#4686BC] hover:bg-[#3b75a8] transition-colors duration-500">
+                        <div key={item.id} className="group relative border-r border-b border-white/20 p-10 bg-[#051B31] hover:bg-[#0A2640] transition-colors duration-500">
 
-                            {/* Animated Top Line (Green for contrast on Blue) */}
+                            {/* Animated Top Line (Green for contrast on Dark Navy) */}
                             <div className="absolute top-0 left-0 w-full h-[3px] bg-[#48A64D] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 
                             {/* Header: ID & Icon */}
@@ -91,7 +86,7 @@ const TrainingSupport = () => {
                             <h4 className="text-xl font-bold text-white mb-4 group-hover:translate-x-1 transition-transform duration-300">
                                 {item.title}
                             </h4>
-                            <p className="text-blue-100 text-sm leading-relaxed font-light">
+                            <p className="text-blue-100/80 text-sm leading-relaxed font-light">
                                 {item.text}
                             </p>
                         </div>

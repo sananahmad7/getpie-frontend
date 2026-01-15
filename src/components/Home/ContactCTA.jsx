@@ -29,7 +29,7 @@ const ContactCTA = () => {
                         <div className="flex-1 p-12 md:p-24 flex flex-col justify-center gap-6 bg-gray-50/50">
 
                             {/* Button 1: Call Us (Solid Blue) */}
-                            <button className="group w-full bg-[#4686BC] cursor-pointer text-white p-6 font-bold text-sm uppercase tracking-widest hover:bg-[#386d99] transition-all flex justify-between items-center shadow-lg shadow-blue-900/10">
+                            <button className="group w-full bg-[#4686BC] cursor-pointer text-white p-6 font-bold text-sm uppercase tracking-widest hover:bg-[#48A64D] transition-all flex justify-between items-center shadow-lg shadow-blue-900/10">
                                 <span className="flex items-center gap-4">
                                     <FaPhoneAlt /> Call Us
                                 </span>
@@ -46,7 +46,7 @@ const ContactCTA = () => {
 
                         </div>
 
-                        {/* Footer / Social Strip */}
+                        {/* Footec / Social Strip */}
                         <div className="border-t border-gray-200 p-8 md:px-12 bg-white flex flex-col md:flex-row items-center justify-between gap-6">
                             <div className="flex items-center gap-4">
                                 <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">

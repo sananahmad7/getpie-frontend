@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import NavBar from './components/NavBar';
 import SliceOfTheMarket from './pages/SliceOfTheMarket';
+import PieShop from './pages/PieShop';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="/" element={<Home />} />
 
         <Route path="/SliceOfTheMarket" element={<SliceOfTheMarket />} />
+        <Route path="/PieProShop" element={<PieShop />} />
+
       </Routes>
     </BrowserRouter>
   );

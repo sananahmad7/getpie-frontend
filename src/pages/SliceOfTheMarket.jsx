@@ -14,7 +14,7 @@ function SliceOfTheMarket() {
             <AvailableBusinessesSlice />
             <MarketingProgramSlice />
             <ReadyToLearnSlice />
-            <div className="h-100" />
+
         </div>
     )
 }

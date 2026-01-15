@@ -3,7 +3,8 @@ import { FaArrowRight, FaArrowDown } from "react-icons/fa";
 
 const AboutSection = () => {
     return (
-        <section className="w-full bg-[#4686BC] py-16 font-outfit text-white">
+        // Updated bg color to #051B31
+        <section className="w-full bg-[#051B31] py-16 font-outfit text-white">
             <div className="container mx-auto px-6 md:px-12">
 
                 {/* TOP BORDER */}

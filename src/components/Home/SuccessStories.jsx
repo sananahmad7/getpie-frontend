@@ -16,10 +16,11 @@ const SuccessStories = () => {
     ];
 
     return (
-        <section className="w-full bg-[#4686BC] font-outfit py-16 border-b border-white/10 relative overflow-hidden">
+        // Updated bg color to #051B31
+        <section className="w-full bg-[#051B31] font-outfit py-16 border-b border-white/10 relative overflow-hidden">
 
-            {/* Background Texture - kept subtle */}
-            <div className="absolute inset-0 opacity-[0.05]"
+            {/* Background Texture - kept subtle (Opacity slightly reduced for dark mode) */}
+            <div className="absolute inset-0 opacity-[0.03]"
                 style={{ backgroundImage: 'radial-gradient(white 1px, transparent 1px)', backgroundSize: '24px 24px' }}>
             </div>
 
@@ -46,7 +47,7 @@ const SuccessStories = () => {
                     {/* 2. LEAN GRID (Right Side) */}
                     <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
                         {testimonials.map((item) => (
-                            <div key={item.id} className="group relative bg-white/10 backdrop-blur-sm p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 flex flex-col justify-between h-full">
+                            <div key={item.id} className="group relative bg-[#0A2640]/50 backdrop-blur-sm p-8 border border-white/20 hover:bg-[#0A2640] transition-all duration-300 flex flex-col justify-between h-full">
 
                                 {/* Sharp Corner Interaction */}
                                 <div className="absolute top-0 right-0 w-0 h-0 border-t-[30px] border-l-[30px] border-t-white border-l-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

@@ -62,7 +62,8 @@ const FeaturedItems = () => {
     const activeContent = products.find((item) => item.id === activeTabId) || products[0];
 
     return (
-        <section className="w-full py-24 bg-[#4686BC] font-outfit relative overflow-hidden">
+        // Updated bg color to #051B31
+        <section className="w-full py-24 bg-[#051B31] font-outfit relative overflow-hidden">
 
             {/* BACKGROUND GLOW EFFECTS */}
             <div className="absolute top-20 left-10 w-96 h-96 bg-white/10 blur-[100px] pointer-events-none"></div>
@@ -89,7 +90,6 @@ const FeaturedItems = () => {
                         <button
                             key={item.id}
                             onClick={() => setActiveTabId(item.id)}
-                            // Removed rounded-t-xl
                             className={`
                                 px-6 py-4 font-bold cursor-pointer text-sm md:text-base transition-all duration-300 border-t border-x border-b-0 flex items-center gap-2 backdrop-blur-md
                                 ${activeTabId === item.id
@@ -105,7 +105,6 @@ const FeaturedItems = () => {
                 </div>
 
                 {/* 2. INNER COMPONENT (The Glass Card) */}
-                {/* Removed rounded-b-3xl and rounded-tr-3xl */}
                 <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-6 md:p-12 shadow-2xl min-h-[500px]">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
@@ -122,7 +121,6 @@ const FeaturedItems = () => {
                             </p>
 
                             {/* Feature List */}
-                            {/* Removed rounded-2xl */}
                             <div className="bg-black/20 p-6 border border-white/5 shadow-inner">
                                 <h4 className="font-bold text-blue-200 text-xs uppercase tracking-wider mb-4 border-b border-white/10 pb-2">
                                     Key Features
@@ -130,7 +128,6 @@ const FeaturedItems = () => {
                                 <ul className="grid grid-cols-1 gap-3">
                                     {activeContent.features.map((feature, idx) => (
                                         <li key={idx} className="flex items-start gap-3 text-sm font-bold text-white">
-                                            {/* Removed rounded-full */}
                                             <div className="mt-0.5 flex-shrink-0 w-5 h-5 flex items-center justify-center bg-[#48A64D] text-white shadow-lg">
                                                 <FaCheck size={10} />
                                             </div>
@@ -144,7 +141,6 @@ const FeaturedItems = () => {
                         {/* RIGHT COLUMN: Image (Span 5) */}
                         <div className="lg:col-span-5 order-1 lg:order-2 w-full h-full flex items-center justify-center">
                             {/* Image Container */}
-                            {/* Removed rounded-2xl */}
                             <div className="relative h-[300px] lg:h-[400px] w-full overflow-hidden shadow-2xl border-4 border-white/80 group transform hover:rotate-1 transition-all duration-500">
                                 <img
                                     src={activeContent.imageSrc}
@@ -156,7 +152,6 @@ const FeaturedItems = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#4686BC]/40 to-transparent pointer-events-none"></div>
 
                                 {/* Floating Badge */}
-                                {/* Removed rounded-lg */}
                                 <div className="absolute bottom-4 left-4 bg-[#4686BC] px-4 py-2 shadow-lg border border-white/20">
                                     <span className="text-xs font-bold text-white uppercase tracking-wider">
                                         Available Now
