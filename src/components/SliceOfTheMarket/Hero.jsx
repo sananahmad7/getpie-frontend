@@ -1,7 +1,8 @@
 import React from 'react';
 import { FaQrcode, FaArrowRight, FaCheck, FaStoreAlt, FaCogs, FaChartLine, FaNetworkWired } from "react-icons/fa";
-
+import { useNavigate } from 'react-router-dom';
 const HeroSlice = () => {
+    const navigate = useNavigate();
     // Reusable Schematic Block Component
     const SchematicBlock = ({ icon: Icon, title, sub, color, accent, isEngine }) => (
         <div className={`relative p-5 border ${accent ? 'border-[#48A64D]' : 'border-white/10'} ${isEngine ? 'bg-[#48A64D]/10' : 'bg-[#0A2640]'} flex flex-col gap-2 w-full md:w-auto md:min-w-[150px]`}>
@@ -76,8 +77,8 @@ const HeroSlice = () => {
                                 <span className="relative z-10">Scan to Start</span>
                             </button>
 
-                            <button className="flex items-center justify-center gap-3 bg-[#0A2640] border border-white/10 hover:border-[#48A64D]/50 text-white px-6 py-3 font-bold text-lg transition-all min-w-[180px] group">
-                                <span>View Schematic</span>
+                            <button onClick={() => navigate('/CreateDemo')} className="flex items-center justify-center gap-3 bg-[#0A2640] border border-white/10 hover:border-[#48A64D]/50 text-white px-6 py-3 font-bold text-lg transition-all min-w-[180px] group">
+                                <span >View Schematic</span>
                                 <FaArrowRight size={14} className="text-[#48A64D] group-hover:translate-x-1 transition-transform" />
                             </button>
                         </div>

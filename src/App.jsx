@@ -5,6 +5,9 @@ import Home from './pages/Home';
 import NavBar from './components/NavBar';
 import SliceOfTheMarket from './pages/SliceOfTheMarket';
 import PieShop from './pages/PieShop';
+import EarningAnalysis from './pages/EarningAnalysis';
+import LoginPage from './pages/Login';
+import CreateDemo from './pages/CreateDemo';
 
 function App() {
   return (
@@ -17,6 +20,11 @@ function App() {
 
         <Route path="/SliceOfTheMarket" element={<SliceOfTheMarket />} />
         <Route path="/PieProShop" element={<PieShop />} />
+        <Route path="/EarningAnalysis" element={<EarningAnalysis />} />
+        <Route path='/CreateDemo' element={<CreateDemo />} />
+
+
+        <Route path="/login" element={<LoginPage />} />
 
       </Routes>
     </BrowserRouter>

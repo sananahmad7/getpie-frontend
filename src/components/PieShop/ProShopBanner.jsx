@@ -8,7 +8,7 @@ const ProShopBanner = () => {
 
                 {/* BANNER CONTAINER */}
                 {/* UPDATED: Gradient from Green (#48A64D) on Left to Navy (#051B31) on Right */}
-                <div className="relative w-full bg-gradient-to-r from-[#48A64D] to-[#051B31] rounded-2xl shadow-xl overflow-hidden group">
+                <div className="relative w-full bg-gradient-to-r bg-[#051B31]  shadow-xl overflow-hidden group">
 
                     {/* --- BACKGROUND DESIGN --- */}
                     {/* Subtle texture overlay */}
@@ -54,7 +54,7 @@ const ProShopBanner = () => {
 
                         {/* RIGHT: ACTION BUTTON */}
                         <div className="lg:w-auto flex-shrink-0 mt-4 lg:mt-0">
-                            <button className="group bg-white cursor-pointer text-[#051B31] px-10 py-5 font-bold uppercase tracking-widest text-sm shadow-lg hover:bg-[#48A64D] hover:text-white transition-all duration-300 rounded-sm flex items-center gap-3">
+                            <button className="group bg-[#48A64D] cursor-pointer text-[#051B31] px-10 py-5 font-bold uppercase tracking-widest text-sm shadow-lg hover:bg-[#4686BC] hover:text-white transition-all duration-300 rounded-sm flex items-center gap-3">
                                 <span>Start Shopping</span>
                                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                             </button>

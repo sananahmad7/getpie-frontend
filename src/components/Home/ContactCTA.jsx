@@ -12,7 +12,7 @@ const ContactCTA = () => {
                     <div className="p-12 md:p-24 border-b lg:border-b-0 lg:border-r border-gray-200 flex flex-col justify-center">
 
 
-                        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 tracking-tighter leading-[0.95] mb-8">
+                        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#051B31] tracking-tighter leading-[0.95] mb-8">
                             Let’s Grow <br />
                             <span className="text-[#4686BC]">Together.</span>
                         </h2>
