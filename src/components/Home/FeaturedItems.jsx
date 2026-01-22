@@ -141,7 +141,7 @@ const FeaturedItems = () => {
                         {/* RIGHT COLUMN: Image (Span 5) */}
                         <div className="lg:col-span-5 order-1 lg:order-2 w-full h-full flex items-center justify-center">
                             {/* Image Container */}
-                            <div className="relative h-[300px] lg:h-[400px] w-full overflow-hidden shadow-2xl border-4 border-white/80 group transform hover:rotate-1 transition-all duration-500">
+                            <div className="relative h-[300px] lg:h-[400px] w-full overflow-hidden shadow-2xl border-2 border-white/80 group transform hover:rotate-1 transition-all duration-500">
                                 <img
                                     src={activeContent.imageSrc}
                                     alt={activeContent.title}
@@ -151,12 +151,7 @@ const FeaturedItems = () => {
                                 {/* Inner Gradient Overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#4686BC]/40 to-transparent pointer-events-none"></div>
 
-                                {/* Floating Badge */}
-                                <div className="absolute bottom-4 left-4 bg-[#4686BC] px-4 py-2 shadow-lg border border-white/20">
-                                    <span className="text-xs font-bold text-white uppercase tracking-wider">
-                                        Available Now
-                                    </span>
-                                </div>
+
                             </div>
                         </div>
 

@@ -30,10 +30,9 @@ const AboutSection = () => {
                             <h2 className="text-5xl md:text-6xl font-bold leading-[0.95] tracking-tight mb-8">
                                 A Smarter Way <br />
                                 To Process <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#48A64D] to-white">Payments.</span>
+                                <span className="text-transparent bg-clip-text bg-[#48A64D]">Payments.</span>
                             </h2>
 
-                            <div className="w-20 h-1 bg-[#48A64D] mb-8"></div>
 
                             {/* Font size xl (Standard/Readable) */}
                             <p className="text-xl text-blue-100 font-light leading-relaxed max-w-lg">
@@ -54,7 +53,7 @@ const AboutSection = () => {
                     <div className="lg:col-span-5 flex flex-col">
 
                         {/* STAT BLOCK 1: Apps */}
-                        <div className="flex-1 border-b border-r border-white/30 p-8 flex flex-col justify-center relative overflow-hidden group hover:bg-[#48A64D] transition-colors duration-500 cursor-crosshair">
+                        <div className="flex-1 border-b border-r border-white/30 p-8 flex flex-col justify-center relative overflow-hidden group hover:bg-[#48A64D] transition-colors duration-500 ">
                             <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                                 <FaArrowRight className="text-white -rotate-45" size={22} />
                             </div>
@@ -68,7 +67,7 @@ const AboutSection = () => {
                         </div>
 
                         {/* STAT BLOCK 2: Integrations */}
-                        <div className="flex-1 border-b border-r border-white/30 p-8 flex flex-col justify-center relative overflow-hidden group hover:bg-white hover:text-[#4686BC] transition-colors duration-500 cursor-crosshair">
+                        <div className="flex-1 border-b border-r border-white/30 p-8 flex flex-col justify-center relative overflow-hidden group hover:bg-white hover:text-[#4686BC] transition-colors duration-500 ">
                             <h3 className="text-6xl md:text-7xl font-bold mb-2 tracking-tighter group-hover:translate-x-2 transition-transform duration-300">
                                 20<span className="text-4xl align-top opacity-50">+</span>
                             </h3>
@@ -78,7 +77,7 @@ const AboutSection = () => {
                         </div>
 
                         {/* STAT BLOCK 3: Years */}
-                        <div className="flex-1 border-r border-b lg:border-b-0 border-white/30 p-8 flex flex-col justify-center relative overflow-hidden group hover:bg-[#1a3b5c] transition-colors duration-500 cursor-crosshair">
+                        <div className="flex-1 border-r border-b lg:border-b-0 border-white/30 p-8 flex flex-col justify-center relative overflow-hidden group hover:bg-[#1a3b5c] transition-colors duration-500 ">
                             <h3 className="text-6xl md:text-7xl font-bold mb-2 tracking-tighter group-hover:translate-x-2 transition-transform duration-300">
                                 20<span className="text-4xl align-top opacity-50">+</span>
                             </h3>

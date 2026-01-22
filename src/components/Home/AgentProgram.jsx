@@ -6,28 +6,28 @@ const AgentProgram = () => {
         {
             id: "01",
             label: "Upfront Commission",
-            value: "$600 – $1,600",
+            value: "$200 – $4,600",
             sub: "Per Sale Upfront",
             desc: "Immediate cash for every merchant account you activate."
         },
         {
             id: "02",
             label: "Recurring Revenue",
-            value: "$300+",
+            value: "$200+",
             sub: "Monthly Residuals",
             desc: "Build a compounding income stream that pays you forever."
         },
         {
             id: "03",
             label: "First Year Target",
-            value: "$75k – $100k",
+            value: "$35k – $60k",
             sub: "Income Potential",
             desc: "Realistic earnings for driven agents in their first 12 months."
         },
         {
             id: "04",
             label: "Top Performers",
-            value: "$300k+",
+            value: "$100k+",
             sub: "Annual Income",
             desc: "Join the elite tier of agents building massive wealth portfolios.",
             highlight: true
@@ -38,7 +38,7 @@ const AgentProgram = () => {
         <section className="w-full bg-white font-outfit py-24 border-b border-gray-100">
             <div className="container mx-auto px-6 md:px-12">
 
-                {/* 1. HEADER (Sharp & Left Aligned) */}
+                {/* 1. HEADER */}
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="max-w-3xl">
                         <h2 className="text-5xl md:text-6xl font-bold text-slate-900 leading-[0.95] tracking-tight">
@@ -54,16 +54,14 @@ const AgentProgram = () => {
                     </div>
                 </div>
 
-                {/* 2. THE SHARP GRID (Dark Navy Theme BG Applied) */}
-                {/* Outer borders changed to white/20 for contrast against the dark navy items */}
+                {/* 2. THE SHARP GRID */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/20 shadow-xl">
                     {stats.map((stat) => (
                         <div
                             key={stat.id}
-                            // Updated BG color to #051B31 (Dark Navy)
                             className="group relative border-r border-b border-white/20 bg-[#051B31] p-10 hover:bg-[#0A2640] transition-all duration-300"
                         >
-                            {/* Hover Interaction: Sharp Corner Accent (White for contrast) */}
+                            {/* Hover Interaction: Sharp Corner Accent */}
                             <div className="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-l-[40px] border-t-white border-l-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             <div className="absolute top-2 right-2 text-[#051B31] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 text-[8px]">
                                 <FaSquareFull />
@@ -74,8 +72,8 @@ const AgentProgram = () => {
                                 {stat.id}
                             </span>
 
-                            {/* Value */}
-                            <h3 className={`text-4xl lg:text-5xl font-light tracking-tight mb-2 ${stat.highlight ? 'text-white' : 'text-[#48A64D]'}`}>
+                            {/* Value - UPDATED: Smaller, White Default, Green on Hover */}
+                            <h3 className="text-3xl lg:text-4xl font-light tracking-tight mb-2 text-white group-hover:text-[#48A64D] transition-colors duration-300">
                                 {stat.value}
                             </h3>
 
@@ -92,7 +90,7 @@ const AgentProgram = () => {
                     ))}
                 </div>
 
-                {/* 3. FOOTER (Sharp Buttons) */}
+                {/* 3. FOOTER */}
                 <div className="mt-16 flex flex-col md:flex-row gap-12 items-center border-t border-gray-100 pt-16">
                     <div className="md:w-1/3">
                         <button className="w-full cursor-pointer md:w-auto bg-[#4686BC] text-white px-10 py-5 font-bold text-sm uppercase tracking-widest hover:bg-[#386d99] transition-colors flex justify-between items-center group">
