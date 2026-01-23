@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const HomeHero = () => {
     return (
-        <section className="relative w-full py-5 lg:pt-25 lg:pb-10 border  bg-white font-outfit overflow-hidden flex items-center">
+        <section className="relative w-full py-15 lg:pt-30 lg:pb-15 border  bg-white font-outfit overflow-hidden flex items-center">
 
             {/* 1. Background Geometry (The "Slash" Effect) */}
             <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
