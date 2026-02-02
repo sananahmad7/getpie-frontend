@@ -39,9 +39,6 @@ const HomeHero = () => {
                                 <FaArrowRight className="text-white/80 group-hover:translate-x-1 transition-transform" size={14} />
                             </button>
 
-                            <button className="h-14 px-10 rounded-lg border cursor-pointer border-gray-200 hover:border-[#4686BC] text-gray-600 hover:text-[#4686BC] text-lg font-medium transition-colors flex items-center justify-center bg-white">
-                                Contact Sales
-                            </button>
                         </div>
                     </div>
 
