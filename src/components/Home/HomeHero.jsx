@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaArrowRight } from "react-icons/fa";
-
+import { useNavigate } from 'react-router-dom';
 const HomeHero = () => {
-    return (
+    const navigate = useNavigate(); return (
         <section className="relative w-full py-15 lg:pt-30 lg:pb-15 border  bg-white font-outfit overflow-hidden flex items-center">
 
             {/* 1. Background Geometry (The "Slash" Effect) */}
@@ -34,7 +34,7 @@ const HomeHero = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                            <button className="h-14 px-10 cursor-pointer rounded-lg bg-[#4686BC] hover:bg-[#386d99] text-white text-lg font-semibold transition-all shadow-xl shadow-blue-100 flex items-center justify-center gap-2 group">
+                            <button onClick={() => navigate("/signup")} className="h-14 px-10 cursor-pointer rounded-lg bg-[#4686BC] hover:bg-[#386d99] text-white text-lg font-semibold transition-all shadow-xl shadow-blue-100 flex items-center justify-center gap-2 group">
                                 Sign Up
                                 <FaArrowRight className="text-white/80 group-hover:translate-x-1 transition-transform" size={14} />
                             </button>

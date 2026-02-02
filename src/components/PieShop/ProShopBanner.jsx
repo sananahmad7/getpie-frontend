@@ -26,9 +26,9 @@ const ProShopBanner = () => {
                         <div className="flex items-center justify-center lg:justify-start lg:w-1/3">
                             {/* Kept bg-white to ensure the Dark Logo is visible against the green background */}
                             <img
-                                src="/LogoDark.png"
+                                src="/flyerProfileLogo.png"
                                 alt="PiePay"
-                                className="h-12 md:h-26 w-auto object-contain   px-6 py-3 rounded-lg "
+                                className="h-30 mdh-36  object-contain   px-6 py-3 rounded-lg "
                             />
                         </div>
 

@@ -8,6 +8,8 @@ import PieShop from './pages/PieShop';
 import EarningAnalysis from './pages/EarningAnalysis';
 import LoginPage from './pages/Login';
 import CreateDemo from './pages/CreateDemo';
+import Referalls from './pages/Referalls';
+import SignUp from './pages/SignUp';
 
 function App() {
   return (
@@ -23,7 +25,8 @@ function App() {
         <Route path="/EarningAnalysis" element={<EarningAnalysis />} />
         <Route path='/CreateDemo' element={<CreateDemo />} />
 
-
+        <Route path="/referals" element={<Referalls />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LoginPage />} />
 
       </Routes>

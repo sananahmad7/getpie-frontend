@@ -122,7 +122,7 @@ const NavBar = () => {
                         <div className="h-6 w-px bg-gray-300"></div>
 
                         <div className="flex items-center gap-3">
-                            <button className="bg-[#4686BC] hover:bg-[#3972a5] cursor-pointer text-white px-5 py-2.5 font-bold text-sm transition-all shadow-md hover:shadow-lg rounded">
+                            <button onClick={() => navigate('/referals')} className="bg-[#4686BC] hover:bg-[#3972a5] cursor-pointer text-white px-5 py-2.5 font-bold text-sm transition-all shadow-md hover:shadow-lg rounded">
                                 Referrals
                             </button>
                             <button className="bg-[#4686BC] cursor-pointer hover:bg-[#3972a5] text-white px-5 py-2.5 font-bold text-sm transition-all shadow-md hover:shadow-lg rounded">
